@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../skins/gas/box.css">
+    <script src="../jquery-1.11.1.js"></script>
+    <script src="../johnbox.js"></script>
+</head>
+<body>
+<input id="popup" type="button" value="弹出框">
+<div id="rightContent" class="rightContent"></div>
+<script>
+    window.onload = function () {
+        document.getElementById("popup").addEventListener("click", function () {
+//            var johnBox = Freedom.JohnBox.getBox({
+//
+//                id: '123',
+//                title: 'hello box',
+//                left: 300,
+//                top: 150,
+//                max: false,
+//                resize: false,
+//                //inRight: true,
+//                width: 600,
+//                height: 400,
+//                content: "<p>Hello JohnBox</p>"
+//            });
+//            johnBox.show();
+            $.JohnBox.alert("真的要发送异步请求吗", function () {
+
+                alert("This is Callback ");
+            })
+
+        }, false)
+    }
+</script>
+</body>
+</html>

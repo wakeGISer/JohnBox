@@ -3,8 +3,8 @@
     //初始化命名空间,依赖JQuery
     if (!window["Freedom"]) { window["Freedom"] = {}; }
     var JohnBox = {
-        //模板
-        boxTemplate:
+            //模板
+            boxTemplate:
             '<div class="johnUI_box">' +
             '  <div class="johnUI_icon"></div>' +
             '  <div class="johnUI_boxReal">' +
@@ -23,162 +23,162 @@
             '  </div>' +
             '</div>' +
             '<div class="johnUI_clear"></div>',
-        //右侧边Box控制器模板
-        rightBarTemplate:
+            //右侧边Box控制器模板
+            rightBarTemplate:
             '<div id="johnUI_rightBoxBar" class="rightBoxBar">' +
             '   <div class="johnUI_boxHide" title="隐藏/显示"></div>' +
             '   <div class="johnUI_boxUp" title="向上滚动"></div>' +
             '   <div class="johnUI_boxDown" title="向下滚动"></div>' +
             '   <div id="johnUI_sliderBar"></div>' +
             '</div>',
-        //右侧最小化窗体
-        rightMinTemplate:
+            //右侧最小化窗体
+            rightMinTemplate:
             '<div class="johnUI_box">' +
             '  <div class="johnUI_minBoxMin"> </div>' +
             '  <div class="johnUI_minIcon"></div>' +
             '</div>' +
             '<div class="johnUI_clear"></div>',
-        //主载体
-        rootLayout: "#boxContent",
-        //右侧窗体控制器
-        rightContrlBar: "#rightBoxBar",
-        //右侧滚动条
-        sliderBar: "#johnUI_sliderBar",
-        //右侧窗体列表
-        rightLayout: "#rightContent",
-        //窗体存储列表
-        boxList: {},
-        //右侧边控制器展开状态
-        expandState: true,     
-        //层级关系
-        zIndex: 10,
-        //右侧窗体居下最小值
-        rightMinBottom: 40,
-        /*! 全局默认配置 */
-        setting: {
-            rootLayout: '#boxContent',
-            rightLayout: '#rightContent',
-            content: '<div class="ui_loading"><span>loading...</span></div>',
-            title: '\u89C6\u7A97 ',     // 标题,默认'视窗'
-            inRight: false,				// 显示在右侧窗体
-            button: null,	     		// 自定义按钮
-            ok: null,					// 确定按钮回调函数
-            cancel: null,				// 取消按钮回调函数
-            init: null,					// 对话框初始化后执行的函数
-            close: null,				// 对话框关闭前执行的函数
-            okVal: '\u786E\u5B9A',		// 确定按钮文本,默认'确定'
-            cancelVal: '\u53D6\u6D88',	// 取消按钮文本,默认'取消'
-            skin: '',					// 多皮肤共存预留接口
-            esc: true,					// 是否支持Esc键关闭
-            show: true,					// 初始化后是否显示对话框
-            width: 'auto',				// 内容宽度
-            height: 'auto',				// 内容高度
-            icon: null,					// 消息图标名称
-            path: null,                 // artdialog路径
-            lock: false,				// 是否锁屏
-            focus: true,                // 窗口是否自动获取焦点
-            parent: null,               // 打开子窗口的父窗口对象，主要用于多层锁屏窗口
-            padding: '10px',		    // 内容与边界填充距离
-            fixed: false,				// 是否静止定位
-            left: null,					// X轴坐标
-            top: null,					// Y轴坐标
-            max: true,                  // 是否显示最大化按钮
-            min: true,                  // 是否显示最小化按钮
-            zIndex: 1976,				// 对话框叠加高度值(重要：此值不能超过浏览器最大限制)
-            resize: true,				// 是否允许用户调节尺寸
-            drag: true, 				// 是否允许用户拖动位置
-            cache: true,                // 是否缓存窗口内容页
-            data: null,                 // 传递各种数据
-            extendDrag: true,           // 增加artdialog拖拽体验
-            showCompleted: null,        // 打开完成后回调
-            closeCompleted: null,       // 关闭完成后回调
-            sizeChanged: null            // 大小变化后回调,            
-        },
+            //主载体
+            rootLayout: "#boxContent",
+            //右侧窗体控制器
+            rightContrlBar: "#rightBoxBar",
+            //右侧滚动条
+            sliderBar: "#johnUI_sliderBar",
+            //右侧窗体列表
+            rightLayout: "#rightContent",
+            //窗体存储列表
+            boxList: {},
+            //右侧边控制器展开状态
+            expandState: true,
+            //层级关系
+            zIndex: 10,
+            //右侧窗体居下最小值
+            rightMinBottom: 40,
+            /*! 全局默认配置 */
+            setting: {
+                rootLayout: '#boxContent',
+                rightLayout: '#rightContent',
+                content: '<div class="ui_loading"><span>loading...</span></div>',
+                title: '\u89C6\u7A97 ',     // 标题,默认'视窗'
+                inRight: false,				// 显示在右侧窗体
+                button: null,	     		// 自定义按钮
+                ok: null,					// 确定按钮回调函数
+                cancel: null,				// 取消按钮回调函数
+                init: null,					// 对话框初始化后执行的函数
+                close: null,				// 对话框关闭前执行的函数
+                okVal: '\u786E\u5B9A',		// 确定按钮文本,默认'确定'
+                cancelVal: '\u53D6\u6D88',	// 取消按钮文本,默认'取消'
+                skin: '',					// 多皮肤共存预留接口
+                esc: true,					// 是否支持Esc键关闭
+                show: true,					// 初始化后是否显示对话框
+                width: 'auto',				// 内容宽度
+                height: 'auto',				// 内容高度
+                icon: null,					// 消息图标名称
+                path: null,                 // artdialog路径
+                lock: false,				// 是否锁屏
+                focus: true,                // 窗口是否自动获取焦点
+                parent: null,               // 打开子窗口的父窗口对象，主要用于多层锁屏窗口
+                padding: '10px',		    // 内容与边界填充距离
+                fixed: false,				// 是否静止定位
+                left: null,					// X轴坐标
+                top: null,					// Y轴坐标
+                max: true,                  // 是否显示最大化按钮
+                min: true,                  // 是否显示最小化按钮
+                zIndex: 1976,				// 对话框叠加高度值(重要：此值不能超过浏览器最大限制)
+                resize: true,				// 是否允许用户调节尺寸
+                drag: true, 				// 是否允许用户拖动位置
+                cache: true,                // 是否缓存窗口内容页
+                data: null,                 // 传递各种数据
+                extendDrag: true,           // 增加artdialog拖拽体验
+                showCompleted: null,        // 打开完成后回调
+                closeCompleted: null,       // 关闭完成后回调
+                sizeChanged: null            // 大小变化后回调,
+            },
 
-        init: function () {
-            JohnBox.boxList = {};
-            JohnBox.expandState = true;            
-        },
+            init: function () {
+                JohnBox.boxList = {};
+                JohnBox.expandState = true;
+            },
 
-        //获取一个窗体
-        getBox: function (config) {
-            config = JohnBox._initConfig(config); //合并用户配置
-            JohnBox.zIndex++;
-            if (!JohnBox.boxList[config.id]) { 
-                var johnBox = JohnBox.JohnBox(config);
-                JohnBox.boxList[config.id] = johnBox;
+            //获取一个窗体
+            getBox: function (config) {
+                config = JohnBox._initConfig(config); //合并用户配置
+                JohnBox.zIndex++;
+                if (!JohnBox.boxList[config.id]) {
+                    var johnBox = JohnBox.JohnBox(config);
+                    JohnBox.boxList[config.id] = johnBox;
+                }
+                return JohnBox.boxList[config.id];
+            },
+
+            getBoxById: function (id) {
+                if (typeof id === 'string') {
+                    var boxId = id;
+                    return this.boxList[boxId];
+                }
+                return null;
+            },
+
+            //根据ID获取该窗体
+            closeBoxByID: function (id) {
+                if (this.boxList[id]) {
+                    this.boxList[id].close();
+                }
+            },
+
+            //工厂
+            JohnBox: function (config) {
+
+                var johnBox = null;
+                var _rurl = /^url:/;
+                var isFrame = _rurl.test(config.content);
+                switch (!!config.inRight) {
+                    case true:
+                        switch (isFrame) {
+                            case true:
+                                johnBox = new IframeRightBox(config);
+                                break;
+                            case false:
+                                johnBox = new ContentRightBox(config);
+                                break;
+                        }
+                        break;
+                    case false:
+                        switch (isFrame) {
+                            case true:
+                                johnBox = new IframeBox(config);
+                                break;
+                            case false:
+                                johnBox = new ContentBox(config);
+                                break;
+                        }
+                        break;
+                }
+                return johnBox;
+            },
+
+            _initConfig: function (config) {
+
+                config = config || {};
+
+                // 合并默认配置
+                for (var i in this.setting) {
+                    if (config[i] === undefined) config[i] = this.setting[i];
+                }
+
+                config.id = config.id || 'JohnLiu' + (+new Date);
+
+                config.left = config.left || ($(window).width() - config.width) / 2;
+                config.left = config.left < 0 ? 0 : config.left;
+                config.top = config.top || ($(window).height() - config.height) / 2;
+                config.top = config.top < 0 ? 0 : config.top;
+
+                return config;
             }
-            return JohnBox.boxList[config.id];
+
         },
-
-        getBoxById: function (id) {
-            if (typeof id === 'string') {
-                var boxId = id;
-                return this.boxList[boxId];
-            }
-            return null;
-        },
-
-        //根据ID获取该窗体
-        closeBoxByID: function (id) {
-            if (this.boxList[id]) {
-                this.boxList[id].close();
-            }
-        },
-
-        //工厂
-        JohnBox: function (config) {
-
-            var johnBox = null;
-            var _rurl = /^url:/;
-            var isFrame = _rurl.test(config.content);
-            switch (!!config.inRight) {
-                case true:
-                    switch (isFrame) {
-                        case true:
-                            johnBox = new IframeRightBox(config);
-                            break;
-                        case false:
-                            johnBox = new ContentRightBox(config);
-                            break;
-                    }
-                    break;
-                case false:
-                    switch (isFrame) {
-                        case true:
-                            johnBox = new IframeBox(config);
-                            break;
-                        case false:
-                            johnBox = new ContentBox(config);
-                            break;
-                    }
-                    break;
-            }
-            return johnBox;         
-        },
-
-        _initConfig: function (config) {
-
-            config = config || {};
-
-            // 合并默认配置
-            for (var i in this.setting) {
-                if (config[i] === undefined) config[i] = this.setting[i];
-            }
-
-            config.id = config.id || 'JohnLiu' + (+new Date);
-
-            config.left = config.left || ($("body").width() - config.width) / 2;
-            config.left = config.left < 0 ? 0 : config.left;
-            config.top = config.top || ($("body").height() - config.height) / 2;
-            config.top = config.top < 0 ? 0 : config.top;
-
-            return config;
-        }
-
-    },
         _body = window.document.body
-        _doc = window.document;
+    _doc = window.document;
 
 
     /*
@@ -187,6 +187,23 @@
      * 插入组件： 右侧滚动条  功能： 侧边栏滚动
      */
     function Box(config) {
+        // 按钮队列
+        config.button = config.button || [];
+
+        config.ok &&
+        config.button.push({
+            id: 'ok',
+            name: config.okVal,
+            callback: config.ok,
+            focus: config.focus
+        });
+
+        config.cancel &&
+        config.button.push({
+            id: 'cancel',
+            name: config.cancelVal,
+            callback: config.cancel
+        });
         this.state = {
             //初始化完成
             init: "init",
@@ -205,21 +222,23 @@
     Box.prototype = {
         constructor:Box,
         /*
-           *  初始化
-           * 1. 构造当前窗体DOM树 
-           * 2. 应用配置到DOM树
-           * 
-           * 备注： 子类构造函数中需要调用此方法
-           */
+         *  初始化
+         * 1. 构造当前窗体DOM树
+         * 2. 应用配置到DOM树
+         *
+         * 备注： 子类构造函数中需要调用此方法
+         */
         init: function (config) {
+            this.button.apply(this, config.button );
+
             this.DOM = this._getDOM(config);
             this._DOMConstructed(config);
             this.injectEvent();
         },
         /*
-          *  构造DOM树
-          *  备注：在内存中构造窗体对象的DOM树，此时还未添加到document上
-          */
+         *  构造DOM树
+         *  备注：在内存中构造窗体对象的DOM树，此时还未添加到document上
+         */
         _getDOM: function (config) {
             var $wrap = $('<div></div>');
             //$wrap.css({ "visibility": "visible" });
@@ -235,7 +254,7 @@
                 wrap: $wrap,
                 wrapmin: $wrapmin,
                 //init,normal,min,max,
-                state: this.state.init,
+                state: this.state.init
             };
 
             $.each($wrap.find("div"), function (i, item) {
@@ -251,9 +270,10 @@
             return DOM;
         },
         /*
-           *  DOM构造完成，开始应用配置
-           *  备注：DOM构造完成，将配置里面的 标题/最小按钮/图标/窗体宽高/ css 应用到Box树上
-           */
+         *  DOM构造完成，开始应用配置
+         *  备注：DOM构造完成，将配置里面的 标题/最小按钮/图标/窗体宽高/ css 应用到Box树上
+         *  是否 显示 最大化/最小化/图标/
+         */
         _DOMConstructed: function (config) {
             $(this.DOM.title).html(config.title);
             $(this.DOM.minBoxMin).html(config.title);
@@ -264,11 +284,12 @@
             $(this.DOM.boxReal).height(config.height);
 
             $(this.DOM.btnMin).css("display", config.min ? "block" : "none");
+            $(this.DOM.btnMax).css("display", config.max ? "block" : "none");
         },
         /*
-          * 往构造完成的窗体DOM树注入事件
-          * 备注：此时DOM树尚未添加到document
-          */
+         * 往构造完成的窗体DOM树注入事件
+         * 备注：此时DOM树尚未添加到document
+         */
         injectEvent: function () {
             $(this.DOM.btnMin).click(this.min.bind(this));
             $(this.DOM.minIcon).click(this.reback.bind(this));
@@ -288,7 +309,7 @@
          */
         show: function () {
             var thisDOM = this.DOM;
-            var allWidth = $("body").width() + thisDOM.wrap.width();
+            var allWidth = $(window).width() + thisDOM.wrap.width();
             var that = this;
             switch (thisDOM.state) {
                 case this.state.init:
@@ -306,7 +327,7 @@
                             "left": allWidth + 30,
                             "top": thisDOM.config.top,
                             'display': 'block',
-                            "margin-top": "0px",
+                            "margin-top": "0px"
                         }).appendTo(thisDOM.config.rootLayout).animate({
                             left: thisDOM.config.left
                         }, 600, "swing", function () {
@@ -389,10 +410,10 @@
                     width: 0,
                     height: 0
                 }, 300, function () {
-                    //location2right ...                
+                    //location2right ...
                     $(pDOM.wrap).css({ "display": "none", "left": allWidth + 30 });
                     $(pDOM.wrapmin).css({ "display": "block" });
-                    //刷新右侧滚动条                    
+                    //刷新右侧滚动条
                     pDOM.config.inRight ? This.refreshScroll() : This.location2Scroll(pDOM);
                     $(pDOM.minBoxMin).animate({ width: 160, height: 30 }, 300, function () {
                         $(pDOM.minIcon).animate({ left: 110 }, 300);
@@ -492,9 +513,6 @@
                 height: '200px',
                 reversed: true,
                 min: 0,
-                tipFormatter: function (value) {
-                    return value + '%';
-                },
                 onChange: function (newV, oldV) {
                     $(JohnBox.rightLayout).css({ "margin-top": -newV });
                 },
@@ -573,6 +591,12 @@
                 }
 
             }, false);
+        },
+        //自定义按钮
+        button：function () {
+            var that = this,DOM = that.DOM,
+                buttons = DOM.buttons[0],
+                listeners = that._listeners = that._listeners || {}
         }
     };
 
@@ -586,11 +610,6 @@
     function ContentBox(config) {
 
         Box.call(this, config); //借调构造函数
-
-        //this.init = function (c) {
-        //    this._DOMConstructed(config);
-        //    this.injectEvent();
-        //}
 
         this.init(config);
 
@@ -621,7 +640,7 @@
             return;
         }
         pDOM.config.drag = true;
-        pDOM.dragging = true
+        pDOM.dragging = true;
         var myBox;
         for (myBox in JohnBox.boxList) {
             if (JohnBox.boxList.hasOwnProperty(myBox)) {
@@ -643,8 +662,8 @@
             var e = e || window.event;
             var oX = e.clientX - lastPoint.x;
             var oY = e.clientY - lastPoint.y;
-            var maxWidth = $("body").width() - 60;//pDOM.config.width
-            var maxHeight = $("body").height() - 60;//pDOM.config.height
+            var maxWidth = $(window).width() - pDOM.wrap.width();
+            var maxHeight = $(window).height() - pDOM.wrap.height();
             oX = Math.max(0, oX);
             oY = Math.max(0, oY);
             oX = Math.min(oX, maxWidth);
@@ -653,10 +672,10 @@
             pDOM.config.top = oY;
 
             $(pDOM.wrap).css(
-            {
-                "left": pDOM.config.left,
-                "top": pDOM.config.top
-            });
+                {
+                    "left": pDOM.config.left,
+                    "top": pDOM.config.top
+                });
             this._clsSelect();
         }
     };
@@ -718,8 +737,8 @@
             var e = e || window.event;
             var oX = e.clientX - lastPoint.x;
             var oY = e.clientY - lastPoint.y;
-            var maxWidth = $("body").width() - pDOM.config.left;
-            var maxHeight = $("body").height() - pDOM.config.top;
+            var maxWidth = $(window).width() - pDOM.config.left;
+            var maxHeight = $(window).height() - pDOM.config.top;
             oX = Math.min(maxWidth, oX);
             oY = Math.min(maxHeight, oY);
             oX = Math.max(100, oX);
@@ -771,7 +790,7 @@
         this._content = function () {
             var pDOM = this.DOM;
             var iframe = $("<iframe width='100%' height='100%' id='iframe" + pDOM.config.id
-            + "'  frameborder='no' marginheight='0' marginwidth='0' allowTransparency='true'></iframe>");
+                + "'  frameborder='no' marginheight='0' marginwidth='0' allowTransparency='true'></iframe>");
             var url = pDOM.config.content.split('url:')[1]
             iframe.attr("src", url);
             if (this.DOM.config.iframeLoadedCompleted && $.isFunction(this.DOM.config.iframeLoadedCompleted)) {
@@ -805,7 +824,7 @@
         switch (thisDOM.state) {
             case this.state.init:
                 thisDOM.state = this.state.open;
-                $(thisDOM.config.rightLayout).append(thisDOM.wrapmin);  
+                $(thisDOM.config.rightLayout).append(thisDOM.wrapmin);
                 $(thisDOM.boxReal).css('display', 'block');
                 $(thisDOM.wrap).css({
                     "z-index": JohnBox.zIndex,
@@ -827,7 +846,7 @@
                         that.window = that.DOM.childrenIframe[0].contentWindow;
                         that.DOM.childrenIframe[0].contentWindow.data = data;
                     })
-                }             
+                }
                 break;
             case this.state.open:
                 this.location2Scroll(thisDOM);
@@ -905,7 +924,7 @@
 
     /*
      *  IframeRightBox 继承自 iframeBox
-     *  
+     *
      */
     IframeRightBox = function (config) {
         IframeBox.call(this, config);
@@ -983,11 +1002,12 @@
 
 
 
-    window["Freedom"].JohnBox = {
-        init:JohnBox.init
+    $.JohnBox =  window["Freedom"].JohnBox = {
+        init: JohnBox.init,
+        getBox:JohnBox.getBox,
+        closeBoxByID:JohnBox.closeBoxByID,
+        setting:JohnBox.setting.zIndex
     };
-    window.Freedom.JohnBox.getBox = $.JohnBox = JohnBox.getBox;
-    window.Freedom.JohnBox.closeBoxByID = JohnBox.closeBoxByID;
 
 
 })(this.jQuery,window);
@@ -1000,24 +1020,32 @@
 (function ($,JohnBox,undefined) {
     var _zIndex = function()
     {
-        return lhgdialog.setting.zIndex;
+        return JohnBox.setting.zIndex;
     };
 
     JohnBox.alert = function (content, callback, parent) {
-        return JohnBox.getBox({
+        var content = "<div class='alert-body'>" + content +
+            "</div><div class='alert-footer'><a href='#' class='cancelBtn'>取消</a><a hre='#' class='successBtn'>确定</a></div>"
+        var box =  JohnBox.getBox({
             title: '警告',
-            id: 'Alert',
+            id: 'Alert' + new Date(),
             zIndex: _zIndex(),
-            icon: 'alert.gif',
+            icon: '../icons/alert.gif',
             fixed: true,
             lock: true,
             content: content,
-            ok: true,
+            ok: callback,
+            cancel:callback,
+            width:300,
+            height:100,
+            min:false,
+            max:false,
             resize: false,
-            close: callback,
             parent: parent || null
         });
+        box.show();
     };
+
 
 })($,window.Freedom.JohnBox);
 
